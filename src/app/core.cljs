@@ -7,4 +7,5 @@
                       (.getElementById js/document "app")))
 
 (defn ^:export main []
-  (start))
+  (start)
+  (new Swiper ".swiper-container"))
