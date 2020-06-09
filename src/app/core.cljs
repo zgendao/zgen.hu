@@ -8,4 +8,4 @@
 
 (defn ^:export main []
   (start)
-  (new Swiper ".swiper-container"))
+  )

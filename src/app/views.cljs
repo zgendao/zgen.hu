@@ -1,7 +1,12 @@
 (ns app.views
-  (:require [reagent.core :as reagent :refer [atom]]))
+  (:require [reagent.core :as reagent :refer [atom]]
+            [swiper :as Swiper]))
 
 (defn app []
+  (reagent/create-class
+    {:component-did-mount (fn [this] (new Swiper ".swiper-container"))
+     :reagent-render
+     (fn []
   [:div.custom-homepage-wrapper
    [:img.left-circuit {:src "https://zgen.hu/uploads/default/original/1X/0267237241ffe2608d1de65bfe0be22d428c6d02.svg"}]
    [:img.right-circuit {:src "https://zgen.hu/uploads/default/original/1X/86f49aa411dad8794e619ed68c0274fab208762b.svg"}]
@@ -137,3 +142,4 @@
          [:a.social-link.twitter {:title "" :target "_blank" :href "https://twitter.com/aaronpowered"}
           [:svg.fa.d-icon-fab-twitter.svg-icon.svg-string {:xmlns "http://www.w3.org/2000/svg"}
            [:use {:xlink:href "#fab-twitter"}]]]]]]]]]])
+   }))
