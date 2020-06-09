@@ -65,7 +65,7 @@ body {
 }
 
 .subtitle-wrapper {
-  margin: 10px 0 10px 50px;
+  margin: 10px 0 10px 30px;
   display:flex;
   flex-direction: column;
 }
@@ -226,7 +226,7 @@ body {
 .container-z {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 180px;
+  margin-bottom: auto;
 }
 
 #main-outlet { margin-top:  84px; }
@@ -336,7 +336,7 @@ display:none;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 75% !important;
+    width: 80% !important;
   }
 
   .left-circuit { display: none; }
