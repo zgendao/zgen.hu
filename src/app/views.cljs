@@ -3,13 +3,12 @@
             [swiper :as Swiper]))
 
 (defn swiper
-  [classone classtwo]
-  (new Swiper (str classone), (clj->js {:slidesPerView "5" :centeredSlides "false" :spaceBetween "0" :pagination ".swiper-pagination" :nextEl ".swiper-button-next" :prevEl ".swiper-button-prev" :scrollbar ".swiper-scrollbar" :setTranslate "0"}))
-  (new Swiper (str classtwo), (clj->js {:slidesPerView "5" :centeredSlides "false" :spaceBetween "0" :pagination {:el ".swiper-pagination"} :navigation {:nextEl ".swiper-button-next" :prevEl ".swiper-button-prev"} :scrollbar {:el ".swiper-scrollbar"}})))
+  [classone]
+  (new Swiper (str classone), (clj->js {:slidesPerView "5" :centeredSlides false :spaceBetween 0 :pagination ".swiper-pagination" :nextEl ".swiper-button-next" :prevEl ".swiper-button-prev" :scrollbar ".swiper-scrollbar" :setTranslate "0"})))
 
 (defn app []
       (reagent/create-class
-        {:component-did-mount (fn [this] (swiper ".swiper-container" ".s2"))
+        {:component-did-mount (fn [this] (swiper ".swiper-container") (swiper ".s2"))
          :reagent-render
          (fn []
           [:div.custom-homepage-wrapper
@@ -24,7 +23,6 @@
                [:h3.work-title "DIVISIONS"]
                [:p {:style {:margin-bottom "24px"}}
                 [:b "Our work should support and specialize on the needs of the next generations."]]]
-
               [:div.swiper-container
                [:div.swiper-wrapper
                 [:div.swiper-slide
@@ -35,42 +33,42 @@
                    [:div.card-desc-box
                     [:p "Creating something with intelligence is not unusual for us."]
                     [:p "From simple automations to multi-layer neural networks:"]
-                    [:p "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]]]
-                 [:div.swiper-slide
-                  [:div.work-card
-                   [:img.ether {:src "https://zgen.hu/uploads/default/original/1X/841c2425e7c16284dfd95fda626523af631daf17.svg"}]
-                   [:div.card-bg
-                    [:h4.card-title "DIGITAL ASSET MANAGEMENT"]
-                    [:div.card-desc-box
-                     [:p "Redefining investments is a massive goal we followed over the past decade."]
-                     [:p "With +7 years of investment experiences in online game assets, domain addresses and cryptocurrencies,"]
-                     [:p "our portfolio is one of the most unique in Hungary."]]]]]
-                 [:div.swiper-slide
-                  [:div.work-card
-                   [:img.webdev {:src "https://zgen.hu/uploads/default/original/1X/68563858f477d54559a0f438e61ca73468b09649.svg"}]
-                   [:div.card-bg
-                    [:h4.card-title "WEB BUILDING"]
-                    [:div.card-desc-box
-                     [:p "We have a long professional history in web-development and cloud computing."]
-                     [:p "+100 web-applications and onepagers serve our clients and the ZGEN ecosystem."]
-                     [:p "From 2017 we have built a custom application creator platform and cloud infrastructure."]]]]]
-                 [:div.swiper-slide
-                  [:div.work-card
-                   [:img.esport {:src "https://zgen.hu/uploads/default/original/1X/b5cf93716ff53b5218eea9017d30100d116c9a64.svg"}]
-                   [:div.card-bg
-                    [:h4.card-title "ESPORT EVENTS"]
-                    [:div.card-desc-box
-                     [:p "We believe online gaming is a new form of connection between friends."]
-                     [:p "Esport is not only for the top players: our community is forged through gaming, the prize is only makes the cherry on top of the cake."]
-                     [:p "Meet you at our next League!"]]]]]
-                 [:div.swiper-slide
-                  [:div.work-card
-                   [:img.education {:src "https://zgen.hu/uploads/default/original/1X/087326bf5a631d944ee87462fcf36a2fd0ecafdd.svg"}]
-                   [:div.card-bg
-                    [:h4.card-title "EDUCATION & MENTORING"]
-                    [:div.card-desc-box
-                     [:p "We organize exclusive programming courses for free on a weekly basis.."]
-                     [:p "One of our main goals with ZGEN is to create a platform where we fund projects of talented guild members and help them bootstrap their ventures."]]]]]]]
+                    [:p "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]]]]
+                [:div.swiper-slide
+                 [:div.work-card
+                  [:img.ether {:src "https://zgen.hu/uploads/default/original/1X/841c2425e7c16284dfd95fda626523af631daf17.svg"}]
+                  [:div.card-bg
+                   [:h4.card-title "DIGITAL ASSET MANAGEMENT"]
+                   [:div.card-desc-box
+                    [:p "Redefining investments is a massive goal we followed over the past decade."]
+                    [:p "With +7 years of investment experiences in online game assets, domain addresses and cryptocurrencies,"]
+                    [:p "our portfolio is one of the most unique in Hungary."]]]]]
+                [:div.swiper-slide
+                 [:div.work-card
+                  [:img.webdev {:src "https://zgen.hu/uploads/default/original/1X/68563858f477d54559a0f438e61ca73468b09649.svg"}]
+                  [:div.card-bg
+                   [:h4.card-title "WEB BUILDING"]
+                   [:div.card-desc-box
+                    [:p "We have a long professional history in web-development and cloud computing."]
+                    [:p "+100 web-applications and onepagers serve our clients and the ZGEN ecosystem."]
+                    [:p "From 2017 we have built a custom application creator platform and cloud infrastructure."]]]]]
+                [:div.swiper-slide
+                 [:div.work-card
+                  [:img.esport {:src "https://zgen.hu/uploads/default/original/1X/b5cf93716ff53b5218eea9017d30100d116c9a64.svg"}]
+                  [:div.card-bg
+                   [:h4.card-title "ESPORT EVENTS"]
+                   [:div.card-desc-box
+                    [:p "We believe online gaming is a new form of connection between friends."]
+                    [:p "Esport is not only for the top players: our community is forged through gaming, the prize is only makes the cherry on top of the cake."]
+                    [:p "Meet you at our next League!"]]]]]
+                [:div.swiper-slide
+                 [:div.work-card
+                  [:img.education {:src "https://zgen.hu/uploads/default/original/1X/087326bf5a631d944ee87462fcf36a2fd0ecafdd.svg"}]
+                  [:div.card-bg
+                   [:h4.card-title "EDUCATION & MENTORING"]
+                   [:div.card-desc-box
+                    [:p "We organize exclusive programming courses for free on a weekly basis.."]
+                    [:p "One of our main goals with ZGEN is to create a platform where we fund projects of talented guild members and help them bootstrap their ventures."]]]]]]
                [:div.swiper-pagination]]]
            [:div.container-z.last-cont
               [:div.subtitle-wrapper
@@ -149,3 +147,63 @@
                     [:svg.fa.d-icon-fab-twitter.svg-icon.svg-string {:xmlns "http://www.w3.org/2000/svg"}
                      [:use {:xlinkHref "#fab-twitter"}]]]
                    [:div.swiper-pagination]]]]]]]]])}))
+
+(defn app1 []
+  (reagent/create-class
+    {:component-did-mount (fn [this] (swiper ".swiper-container") (swiper ".s2"))
+     :reagent-render
+     (fn []
+       [:div
+         [:div.swiper-container
+          [:div.swiper-wrapper
+           [:div.swiper-slide
+            [:div.work-card
+             [:img.ai {:src "https://zgen.hu/uploads/default/original/1X/78c8ad230ae90bfc766b16ffb95c8423023c1d75.svg"}]
+             [:div.card-bg
+              [:h4.card-title "AI ENGINEERING"]
+              [:div.card-desc-box
+               [:p "Creating something with intelligence is not unusual for us."]
+               [:p "From simple automations to multi-layer neural networks:"]
+               [:p "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]]]]
+           [:div.swiper-slide
+            [:div.work-card
+             [:img.ether {:src "https://zgen.hu/uploads/default/original/1X/841c2425e7c16284dfd95fda626523af631daf17.svg"}]
+             [:div.card-bg
+              [:h4.card-title "DIGITAL ASSET MANAGEMENT"]
+              [:div.card-desc-box
+               [:p "Redefining investments is a massive goal we followed over the past decade."]
+               [:p "With +7 years of investment experiences in online game assets, domain addresses and cryptocurrencies,"]
+               [:p "our portfolio is one of the most unique in Hungary."]]]]]
+           [:div.swiper-slide
+            [:div.work-card
+             [:img.webdev {:src "https://zgen.hu/uploads/default/original/1X/68563858f477d54559a0f438e61ca73468b09649.svg"}]
+             [:div.card-bg
+              [:h4.card-title "WEB BUILDING"]
+              [:div.card-desc-box
+               [:p "We have a long professional history in web-development and cloud computing."]
+               [:p "+100 web-applications and onepagers serve our clients and the ZGEN ecosystem."]
+               [:p "From 2017 we have built a custom application creator platform and cloud infrastructure."]]]]]
+           [:div.swiper-slide
+            [:div.work-card
+             [:img.esport {:src "https://zgen.hu/uploads/default/original/1X/b5cf93716ff53b5218eea9017d30100d116c9a64.svg"}]
+             [:div.card-bg
+              [:h4.card-title "ESPORT EVENTS"]
+              [:div.card-desc-box
+               [:p "We believe online gaming is a new form of connection between friends."]
+               [:p "Esport is not only for the top players: our community is forged through gaming, the prize is only makes the cherry on top of the cake."]
+               [:p "Meet you at our next League!"]]]]]
+           [:div.swiper-slide
+            [:div.work-card
+             [:img.education {:src "https://zgen.hu/uploads/default/original/1X/087326bf5a631d944ee87462fcf36a2fd0ecafdd.svg"}]
+             [:div.card-bg
+              [:h4.card-title "EDUCATION & MENTORING"]
+              [:div.card-desc-box
+               [:p "We organize exclusive programming courses for free on a weekly basis.."]
+               [:p "One of our main goals with ZGEN is to create a platform where we fund projects of talented guild members and help them bootstrap their ventures."]]]]]]
+          [:div.swiper-pagination]]
+         [:div.s2
+          [:div.swiper-wrapper
+           [:div.swiper-slide "egy"]
+           [:div.swiper-slide "egy"]
+           [:div.swiper-slide "egy"]
+           [:div.swiper-slide "egy"]]]])}))
