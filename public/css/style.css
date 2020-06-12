@@ -34,6 +34,31 @@ body {
   font-family: 'Red Hat Display', sans-serif;
   background: radial-gradient(rgba(250, 250, 250, 1), rgba(255, 255, 255, 0.9));
   margin-top: 0;
+  overflow: hidden;
+}
+
+a:link {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .left-circuit {
@@ -54,10 +79,8 @@ body {
 .title-wrapper {
   width: 100%;
   min-height: calc(100vh - 0px);
-
   color: #202020;
   font-weight: 700;
-
   display:flex;
   flex-direction: column;
   align-items:center;
@@ -135,6 +158,10 @@ body {
   transition: all .2s ease-in-out;
 }
 
+.w2 {
+  height:400px;
+}
+
 .work-card:hover {
   transform: scale(1.03) perspective(1px);
 }
@@ -183,8 +210,11 @@ body {
   font-weight: 500;
   font-size: 18px;
 }
-.card-name svg {
+.card-name a {
     fill: black;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .leadership-title {
@@ -211,7 +241,7 @@ body {
   margin: 0;
 }
 
-.swiper-container {
+.swiper-container, .s2{
   display: block;
   overflow: visible !important;
 }
@@ -221,10 +251,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 80%;
-}
-
-.s2{
-
 }
 
 
@@ -279,7 +305,7 @@ body {
       width: 1290px !important;
       max-width: 1290px !important;
   }
-  .work-desktop, .leadership-desktop, .swiper-pagination { display: none; }
+  .work-desktop, .leadership-desktop, .swiper-pagination, .sp2 { display: none; }
   .subtitle-wrapper {
     margin-bottom:30px;
   }
@@ -325,12 +351,13 @@ display:none;
   .subtitle-wrapper { margin-left: 20px; }
   .work-title, .leadership-title, .guild-title { font-size: 48px; }
   .work-desktop, .leadership-desktop { display: none; }
-  .swiper-pagination-bullet-active { background-color: #000 !important; }
+  .swiper-pagination-bullet-active, .sp2-bullet-active { background-color: #000 !important; }
 
   .swiper-pagination {
       bottom: -60px !important;
   }
-  .swiper-container {
+
+  .swiper-container, .s2{
     display: block;
     width: 100%;
         margin-bottom: 198px;
