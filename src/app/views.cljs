@@ -13,8 +13,8 @@
     :reagent-render
     (fn []
       [:div.custom-homepage-wrapper
-       [:img.left-circuit {:src "https://zgen.hu/uploads/default/original/1X/0267237241ffe2608d1de65bfe0be22d428c6d02.svg"}]
-       [:img.right-circuit {:src "https://zgen.hu/uploads/default/original/1X/86f49aa411dad8794e619ed68c0274fab208762b.svg"}]
+       [:img.left-circuit {:src "/images/left-circuit.svg"}]
+       [:img.right-circuit {:src "/images/right-circuit.svg"}]
        [:div.title-wrapper
         [:h1.zgen "ZGEN"]
         [:h2.kibernetika "KIBERNETIKA"]
@@ -28,7 +28,7 @@
          [:div.swiper-wrapper
           [:div.swiper-slide
            [:div.work-card
-            [:img.ai {:src "https://zgen.hu/uploads/default/original/1X/78c8ad230ae90bfc766b16ffb95c8423023c1d75.svg"}]
+            [:img.ai {:src "/images/ai.svg"}]
             [:div.card-bg
              [:h4.card-title "AI ENGINEERING"]
              [:div.card-desc-box
@@ -37,7 +37,7 @@
               [:p "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]]]]
           [:div.swiper-slide
            [:div.work-card
-            [:img.ether {:src "https://zgen.hu/uploads/default/original/1X/841c2425e7c16284dfd95fda626523af631daf17.svg"}]
+            [:img.ether {:src "/images/ether.svg"}]
             [:div.card-bg
              [:h4.card-title "DIGITAL ASSET MANAGEMENT"]
              [:div.card-desc-box
@@ -46,7 +46,7 @@
               [:p "our portfolio is one of the most unique in Hungary."]]]]]
           [:div.swiper-slide
            [:div.work-card
-            [:img.webdev {:src "https://zgen.hu/uploads/default/original/1X/68563858f477d54559a0f438e61ca73468b09649.svg"}]
+            [:img.webdev {:src "/images/webdev.svg"}]
             [:div.card-bg
              [:h4.card-title "WEB BUILDING"]
              [:div.card-desc-box
@@ -55,7 +55,7 @@
               [:p "From 2017 we have built a custom application creator platform and cloud infrastructure."]]]]]
           [:div.swiper-slide
            [:div.work-card
-            [:img.esport {:src "https://zgen.hu/uploads/default/original/1X/b5cf93716ff53b5218eea9017d30100d116c9a64.svg"}]
+            [:img.esport {:src "/images/esport.svg"}]
             [:div.card-bg
              [:h4.card-title "ESPORT EVENTS"]
              [:div.card-desc-box
@@ -64,7 +64,7 @@
               [:p "Meet you at our next League!"]]]]]
           [:div.swiper-slide
            [:div.work-card
-            [:img.education {:src "https://zgen.hu/uploads/default/original/1X/087326bf5a631d944ee87462fcf36a2fd0ecafdd.svg"}]
+            [:img.education {:src "/images/education.svg"}]
             [:div.card-bg
              [:h4.card-title "EDUCATION & MENTORING"]
              [:div.card-desc-box
@@ -81,7 +81,7 @@
          [:div.swiper-wrapper
           [:div.swiper-slide
            [:div.work-card.w2
-            [:img.bruno {:src "https://zgen.hu/uploads/default/original/1X/f523474b2548ab1f52a181e69046e2b457fd9992.jpg"}]
+            [:img.bruno {:src "/images/bruno.jpg"}]
             [:div.card-bg.card-bg-flex
              [:h4.card-title "OPERATIONS"]
              [:div.card-desc-box
@@ -94,7 +94,7 @@
               [:a.fab.fa-linkedin.fa-3x {:href "https://www.linkedin.com/in/bruno-z-411656141/" :target "_blank"}]]]]]
           [:div.swiper-slide
            [:div.work-card.w2
-            [:img.berci {:src "https://zgen.hu/uploads/default/original/1X/cf2f5695e44a32256d0503433862116004be9247.jpg"}]
+            [:img.berci {:src "/images/berci.jpg"}]
             [:div.card-bg.card-bg-flex
              [:h4.card-title "TECHNOLOGY"]
              [:div.card-desc-box
@@ -105,7 +105,7 @@
               [:a.fab.fa-facebook.fa-3x {:href "https://www.facebook.com/bernat.zawiasa" :target "_blank"}]]]]]
           [:div.swiper-slide
            [:div.work-card.w2
-            [:img.samu {:src "https://zgen.hu/uploads/default/original/1X/7d45caa7275933223c1c8a6335784875c63cd81a.jpg"}]
+            [:img.samu {:src "/images/samu.jpg"}]
             [:div.card-bg.card-bg-flex
              [:h4.card-title "RELATIONS"]
              [:div.card-desc-box
@@ -118,7 +118,7 @@
               [:a.fab.fa-linkedin.fa-3x {:href "https://www.linkedin.com/in/s%C3%A1muel-k%C3%A1ll%C3%B3-975428152/" :target "_blank"}]]]]]
           [:div.swiper-slide
            [:div.work-card.w2
-            [:img.aron {:src "https://zgen.hu/uploads/default/original/1X/f624aace4d9974b95ff6f66aaee4d14fdbb8c5ee.jpg"}]
+            [:img.aron {:src "/images/aron.jpg"}]
             [:div.card-bg.card-bg-flex
              [:h4.card-title "INVESTMENT"]
              [:div.card-desc-box
