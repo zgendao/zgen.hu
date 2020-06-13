@@ -7,6 +7,31 @@
     (new Swiper (str classone), (clj->js {:slidesPerView "auto" :centeredSlides true :spaceBetween -30 :pagination {:el (str pagone)}}))
     (new Swiper (str classone), (clj->js {:slidesPerView "5" :centeredSlides false :spaceBetween 0 :pagination {:el (str pagone)}}))))
 
+(defn division [img title description]
+  [:div.swiper-slide
+   [:div.work-card
+    [:img {:class [img] :src (str "/images/" img ".svg")}]
+    [:div.card-bg
+     [:h4.card-title title]
+     [:div.card-description
+      (for [p description]
+        [:p p])]]]])
+
+(defn member [img title name description social]
+  [:div.swiper-slide
+   [:div.work-card.w2
+    [:img.bruno {:src (str "/images/" img ".jpg")}]
+    [:div.card-bg.card-bg-flex
+     [:h4.card-title title]
+     [:div.card-description
+      (for [p description]
+        [:p p])]
+     [:div.card-name
+      [:p name]]
+     [:div.card-social
+      (for [platform social]
+        [:a {:class ["social-icon" (first platform)] :href (second platform) :target "_blank"}])]]]])
+
 (defn app []
   (reagent/create-class
    {:component-did-mount (fn [this] (swiper ".swiper-container" ".swiper-pagination") (swiper ".s2" "sp2"))
@@ -19,6 +44,7 @@
         [:h1.zgen "ZGEN"]
         [:h2.kibernetika "KIBERNETIKA"]
         [:p "No matter how many times we fail, we're the generation of progress."]]
+
        [:div.container-z
         [:div.subtitle-wrapper
          [:h3.work-title "DIVISIONS"]
@@ -26,106 +52,58 @@
           [:b "Our work should support and specialize on the needs of the next generations."]]]
         [:div.swiper-container
          [:div.swiper-wrapper
-          [:div.swiper-slide
-           [:div.work-card
-            [:img.ai {:src "/images/ai.svg"}]
-            [:div.card-bg
-             [:h4.card-title "AI ENGINEERING"]
-             [:div.card-desc-box
-              [:p "Creating something with intelligence is not unusual for us."]
-              [:p "From simple automations to multi-layer neural networks:"]
-              [:p "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]]]]
-          [:div.swiper-slide
-           [:div.work-card
-            [:img.ether {:src "/images/ether.svg"}]
-            [:div.card-bg
-             [:h4.card-title "DIGITAL ASSET MANAGEMENT"]
-             [:div.card-desc-box
-              [:p "Redefining investments is a massive goal we followed over the past decade."]
-              [:p "With +7 years of investment experiences in online game assets, domain addresses and cryptocurrencies,"]
-              [:p "our portfolio is one of the most unique in Hungary."]]]]]
-          [:div.swiper-slide
-           [:div.work-card
-            [:img.webdev {:src "/images/webdev.svg"}]
-            [:div.card-bg
-             [:h4.card-title "WEB BUILDING"]
-             [:div.card-desc-box
-              [:p "We have a long professional history in web-development and cloud computing."]
-              [:p "+100 web-applications and onepagers serve our clients and the ZGEN ecosystem."]
-              [:p "From 2017 we have built a custom application creator platform and cloud infrastructure."]]]]]
-          [:div.swiper-slide
-           [:div.work-card
-            [:img.esport {:src "/images/esport.svg"}]
-            [:div.card-bg
-             [:h4.card-title "ESPORT EVENTS"]
-             [:div.card-desc-box
-              [:p "We believe online gaming is a new form of connection between friends."]
-              [:p "Esport is not only for the top players: our community is forged through gaming, the prize is only makes the cherry on top of the cake."]
-              [:p "Meet you at our next League!"]]]]]
-          [:div.swiper-slide
-           [:div.work-card
-            [:img.education {:src "/images/education.svg"}]
-            [:div.card-bg
-             [:h4.card-title "EDUCATION & MENTORING"]
-             [:div.card-desc-box
-              [:p "We organize exclusive programming courses for free on a weekly basis.."]
-              [:p "One of our main goals with ZGEN is to create a platform where we fund projects of talented guild members and help them bootstrap their ventures."]]]]]]
+          [division "ai" "AI ENGINEERING"
+           ["Creating something with intelligence is not unusual for us."
+            "From simple automations to multi-layer neural networks:"
+            "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]
+
+          [division "ether" "DIGITAL ASSET MANAGEMENT"
+           ["Redefining investments is a massive goal we followed over the past decade."
+            "With +7 years of investment experiences in online game assets, domain addresses and cryptocurrencies,"
+            "our portfolio is one of the most unique in Hungary."]]
+
+          [division "webdev" "WEB BUILDING"
+           ["We have a long professional history in web-development and cloud computing."
+            "+100 web-applications and onepagers serve our clients and the ZGEN ecosystem."
+            "From 2017 we have built a custom application creator platform and cloud infrastructure."]]
+
+          [division "esport" "ESPORT EVENTS"
+           ["We believe online gaming is a new form of connection between friends."
+            "Esport is not only for the top players: our community is forged through gaming, the prize is only makes the cherry on top of the cake."
+            "Meet you at our next League!"]]
+
+          [division "education" "EDUCATION & MENTORING"
+           ["We organize exclusive programming courses for free on a weekly basis.."
+            "One of our main goals with ZGEN is to create a platform where we fund projects of talented guild members and help them bootstrap their ventures."]]]
          [:div.swiper-pagination]]]
+
        [:div.container-z.last-cont
         [:div.subtitle-wrapper
          [:h3.leadership-title "THE COUNCIL"]
-         [:p
-          [:b "Rule 2:"]
-          "Leadership should include generation Z members only."]]
+         [:p "Leadership should include generation Z members only."]]
         [:div.swiper-container.s2
          [:div.swiper-wrapper
-          [:div.swiper-slide
-           [:div.work-card.w2
-            [:img.bruno {:src "/images/bruno.jpg"}]
-            [:div.card-bg.card-bg-flex
-             [:h4.card-title "OPERATIONS"]
-             [:div.card-desc-box
-              [:p "Bruno is the all seeing eye of ZGEN and its associates, his natural leader abilities and consistency make him a perfect Chief Operating Officer."]
-              [:p "He is the co-founder of "
-               [:a {:href "https://sulibot.hu" :target "_blank" :style {:color "black" :font-weight "800"}} "Sulibot"]
-               ", a popular educational chatbot solution."]]
-             [:div.card-name
-              [:a.fab.fa-facebook.fa-3x {:href "https://www.facebook.com/zawiasa.bruno" :target "_blank"}]
-              [:a.fab.fa-linkedin.fa-3x {:href "https://www.linkedin.com/in/bruno-z-411656141/" :target "_blank"}]]]]]
-          [:div.swiper-slide
-           [:div.work-card.w2
-            [:img.berci {:src "/images/berci.jpg"}]
-            [:div.card-bg.card-bg-flex
-             [:h4.card-title "TECHNOLOGY"]
-             [:div.card-desc-box
-              [:p "Bernat is just as precise as his end products."]
-              [:p "He could create robots from anything which qualifies him as our Chief Technology Officer."]
-              [:p "When he doesn't do that, he plays darts."]]
-             [:div.card-name
-              [:a.fab.fa-facebook.fa-3x {:href "https://www.facebook.com/bernat.zawiasa" :target "_blank"}]]]]]
-          [:div.swiper-slide
-           [:div.work-card.w2
-            [:img.samu {:src "/images/samu.jpg"}]
-            [:div.card-bg.card-bg-flex
-             [:h4.card-title "RELATIONS"]
-             [:div.card-desc-box
-              [:p "Samuel has unmatched abilities to read, understand and learn things."]
-              [:p "He is an organizer of "
-               [:a {:href "https://www.facebook.com/mccdebate/" :target "_blank" :style {:color "black" :font-weight "800"}} "MCC Debate"]]
-              [:p "also has written for prominent hungarian newspapers since his early years in university."]]
-             [:div.card-name
-              [:a.fab.fa-facebook.fa-3x {:href "https://www.facebook.com/samuel.kallo.49" :target "_blank"}]
-              [:a.fab.fa-linkedin.fa-3x {:href "https://www.linkedin.com/in/s%C3%A1muel-k%C3%A1ll%C3%B3-975428152/" :target "_blank"}]]]]]
-          [:div.swiper-slide
-           [:div.work-card.w2
-            [:img.aron {:src "/images/aron.jpg"}]
-            [:div.card-bg.card-bg-flex
-             [:h4.card-title "INVESTMENT"]
-             [:div.card-desc-box
-              [:p "Robert made his way into the investment world early in his career as an early adopter of cryptocurrencies."]
-              [:p "He is responsible for company strategy and investor relationships as the Chief Investment Officer."]]
-             [:div.card-name
-              [:a.fab.fa-facebook.fa-3x {:href "https://www.facebook.com/aaronpowered" :target "_blank"}]
-              [:a.fab.fa-linkedin.fa-3x {:href "https://www.linkedin.com/in/zawiasa/" :target "_blank"}]
-              [:a.fab.fa-twitter.fa-3x {:href "https://twitter.com/aaronpowered" :target "_blank"}]]]]]]
+          [member "bruno" "OPERATIONS" "Zawiasa Brúnó Márton"
+           ["Bruno is the all seeing eye of ZGEN and its associates, his natural leader abilities and consistency make him a perfect Chief Operating Officer."
+            "He is the co-founder of sulibot.hu, a popular educational chatbot solution."]
+           [["linkedin" "https://www.linkedin.com/in/bruno-z-411656141/"]
+            ["telegram" "/"]]]
+
+          [member "berci" "TECHNOLOGY" "Zawias Bernát Barnabás"
+           ["Bernat is just as precise as his end products."
+            "He could create robots from anything which qualifies him as our Chief Technology Officer."
+            "When he doesn't do that, he plays darts."]]
+
+          [member "samu" "RELATIONS" "Kálló Sámuel"
+           ["Samuel has unmatched abilities to read, understand and learn things."
+            "He is an organizer of MCC Debate also has written for prominent hungarian newspapers since his early years in university."]
+           [["linkedin" "https://www.linkedin.com/in/s%C3%A1muel-k%C3%A1ll%C3%B3-975428152/"]]]
+
+          [member "aron" "INVESTMENT" "Zawiasa Róbert Áron"
+           ["Robert made his way into the investment world early in his career as an early adopter of cryptocurrencies."
+            "He is responsible for company strategy and investor relationships as the Chief Investment Officer."]
+           [["linkedin" "https://www.linkedin.com/in/zawiasa/"]
+            ["twitter" "https://twitter.com/aaronpowered"]
+            ["telegram" "/"]]]]
+
          [:div.swiper-pagination.sp2]]]])}))

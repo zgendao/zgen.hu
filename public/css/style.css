@@ -1,7 +1,3 @@
-body {
-  overflow-x: hidden;
-  position: relative;
-}
 
 .custom-homepage-wrapper {
   cursor: default;
@@ -34,7 +30,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .title-wrapper {
-  width: 100%;
+  width: 100vw;
   min-height: calc(100vh - 0px);
   color: #202020;
   font-weight: 700;
@@ -167,20 +163,33 @@ a:link, a:visited, a:hover, a:active {
 
 .card-title {
   font-size: 24px;
-  margin: 60px 0 20px 0;
+  margin: 60px 0 10px 0;
   font-weight: 600;
   padding: 0 20px 0 20px;
   text-align: center;
   line-height: 100%
 }
 
-.card-desc-box {
+.card-description {
   padding: 0 30px 0px 30px;
 }
 
-.card-desc-box>p {
+.card-description>p {
   font-size: 14px;
   line-height: 100%
+}
+
+.card-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.card-social a {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card-name {
@@ -190,11 +199,10 @@ a:link, a:visited, a:hover, a:active {
   font-size: 18px;
 }
 
-.card-name a {
+.card-name p {
   fill: black;
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .leadership-title {
@@ -207,18 +215,6 @@ a:link, a:visited, a:hover, a:active {
   position: absolute;
   top: -35px;
   border: 10px solid white;
-}
-
-.guild {
-  width: 100%;
-  background: #3D4147;
-  color: white;
-  padding: 30px 0 0px 0;
-}
-
-.guild-title {
-  font-size: 60px;
-  margin: 0;
 }
 
 .swiper-container, .s2 {
@@ -243,10 +239,26 @@ a:link, a:visited, a:hover, a:active {
   margin-left: 6px !important;
 }
 
-.social {
-  font-size: 27px;
+.linkedin {
+  display: block;
+  background: url("/images/linkedin.svg");
+}
+
+.twitter {
+  display: block;
+  background: url("/images/twitter.svg");
+}
+.telegram {
+  display: block;
+  background: url("/images/telegram.svg");
+}
+
+.social-icon {
+  width: 25px;
+  height: 25px;
   margin-right: 15px;
 }
+
 
 @media screen and (min-width: 452px) {
   .container-z {
