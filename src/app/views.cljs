@@ -48,7 +48,7 @@
        [:div.container-z
         [:div.subtitle-wrapper
          [:h3.work-title "DIVISIONS"]
-         [:p "Our work should support and specialize on the needs of the next generations."]]
+         [:p ""]]
         [:div.swiper-container
          [:div.swiper-wrapper
           [division "ai" "AI ENGINEERING"
@@ -78,8 +78,8 @@
 
        [:div.container-z
         [:div.subtitle-wrapper
-         [:h3.leadership-title "THE COUNCIL"]
-         [:p "Leadership should include generation Z members only."]]
+         [:h3.leadership-title "MEMBERS"]
+         [:p ""]]
         [:div.swiper-container.s2
          [:div.swiper-wrapper
           [member "bruno" "OPERATIONS" "Zawiasa Brúnó Márton"
