@@ -1,11 +1,13 @@
-
-.custom-homepage-wrapper {
+body {
+  margin: 0;
   cursor: default;
-  color: black;
+  overflow-x: hidden;
   font-family: 'Red Hat Display', sans-serif;
   background: radial-gradient(rgba(250, 250, 250, 1), rgba(255, 255, 255, 0.9));
-  margin-top: 0;
-  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -219,7 +221,6 @@ a:link, a:visited, a:hover, a:active {
 
 .swiper-container, .s2 {
   display: block;
-  overflow: visible !important;
 }
 
 .swiper-slide {
@@ -227,6 +228,7 @@ a:link, a:visited, a:hover, a:active {
   justify-content: center;
   align-items: center;
   width: 80%;
+  height: 420px !important;
 }
 
 .container-z {
@@ -266,12 +268,12 @@ a:link, a:visited, a:hover, a:active {
     max-width: 1290px !important;
   }
 
-  .swiper-pagination, .sp2 {
-    display: none;
-  }
-
   .subtitle-wrapper {
     margin-bottom: 30px;
+  }
+
+  .swiper-pagination, .sp2 {
+    display: none;
   }
 }
 
@@ -280,23 +282,11 @@ a:link, a:visited, a:hover, a:active {
     margin: 30px;
   }
 
-  .last-cont .subtitle-wrapper>p {
-    margin-bottom: 51px;
-  }
-
   .title-wrapper>p {
     margin: 10px;
     text-align: center;
     font-size: 19px;
     width: 267px;
-  }
-
-  .work-card {
-    margin: 0;
-  }
-
-  .last-cont {
-    margin-bottom: 60px;
   }
 
   .subtitle-wrapper>* {
@@ -323,30 +313,25 @@ a:link, a:visited, a:hover, a:active {
     font-size: 48px;
   }
 
-  .work-desktop, .leadership-desktop {
-    display: none;
-  }
-
   .swiper-pagination-bullet-active, .sp2-bullet-active {
     background-color: #000 !important;
   }
 
   .swiper-pagination {
-    bottom: -60px !important;
+    position: relative;
   }
 
   .swiper-container, .s2 {
     display: block;
     width: 100%;
-    margin-bottom: 198px;
+    margin-bottom: 80px;
   }
 
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 80% !important;
+    width: 80%;
   }
 
   .left-circuit {

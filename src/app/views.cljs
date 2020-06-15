@@ -27,10 +27,10 @@
       (for [p description]
         [:p p])]
      [:div.card-name
-      [:p name]]
-     [:div.card-social
-      (for [platform social]
-        [:a {:class ["social-icon" (first platform)] :href (second platform) :target "_blank"}])]]]])
+      [:p name]]]]])
+     ; [:div.card-social
+     ;  (for [platform social]
+     ;    [:a {:class ["social-icon" (first platform)] :href (second platform) :target "_blank"}])]]]])
 
 (defn app []
   (reagent/create-class
@@ -48,8 +48,7 @@
        [:div.container-z
         [:div.subtitle-wrapper
          [:h3.work-title "DIVISIONS"]
-         [:p {:style {:margin-bottom "24px"}}
-          [:b "Our work should support and specialize on the needs of the next generations."]]]
+         [:p "Our work should support and specialize on the needs of the next generations."]]
         [:div.swiper-container
          [:div.swiper-wrapper
           [division "ai" "AI ENGINEERING"
@@ -77,7 +76,7 @@
             "One of our main goals with ZGEN is to create a platform where we fund projects of talented guild members and help them bootstrap their ventures."]]]
          [:div.swiper-pagination]]]
 
-       [:div.container-z.last-cont
+       [:div.container-z
         [:div.subtitle-wrapper
          [:h3.leadership-title "THE COUNCIL"]
          [:p "Leadership should include generation Z members only."]]
