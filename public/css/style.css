@@ -43,7 +43,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .subtitle-wrapper {
-  margin: 10px 0 10px 30px;
+  margin: 90px 0 10px 30px;
   display: flex;
   flex-direction: column;
 }
@@ -54,24 +54,25 @@ a:link, a:visited, a:hover, a:active {
 
 .title-wrapper>p {
   font-weight: 400 !important;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .subtitle-wrapper>p {
   margin-left: 6px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .zgen {
-  font-size: 150px;
+  font-size: 176px;
   margin: 0;
   line-height: 90%;
   font-weight: 700;
+  letter-spacing: -0.003em;
   z-index: 1;
 }
 
 .kibernetika {
-  font-size: 52px;
+  font-size: 60px;
   margin: 0 0 40px 0;
   line-height: 80%;
   letter-spacing: 0.12em;

@@ -43,21 +43,23 @@
        [:div.title-wrapper
         [:h1.zgen "ZGEN"]
         [:h2.kibernetika "KIBERNETIKA"]
-        [:p "No matter how many times we fail, we're the generation of progress."]]
+        ;[:p "No matter how many times we fail, we're the generation of progress."]
+        [:p {:style {:margin-top 0}} "We build an automated future, collectively governed by the generation Z."]
+        ]
 
        [:div.container-z
         [:div.subtitle-wrapper
-         [:h3.work-title "DIVISIONS"]
-         [:p ""]]
+         [:h3.work-title "TARGETS"]
+         [:p {:style {:margin-bottom "0px"}} "We transform our time to the following things:"]]
         [:div.swiper-container
          [:div.swiper-wrapper
-          [division "ai" "AI ENGINEERING"
-           ["Creating something with intelligence is not unusual for us."
-            "From simple automations to multi-layer neural networks:"
-            "We build our custom solutions from a mix of deep learning, logical programming and low-level language designs."]]
+          [division "ai" "SOFTWARE EVERYHWERE"
+           ["We automate work with a wide range of technics."
+            "From genetic algorithms to multi-layer neural networks: We build our custom solutions to every problem."
+            "Our team has experts in low-level programming & language design."]]
 
           [division "ether" "DIGITAL ASSET MANAGEMENT"
-           ["Redefining investments is a massive goal we followed over the past decade."
+           ["Redefining value is a massive goal we followed over the past decade."
             "With +7 years of investment experiences in online game assets, domain addresses and cryptocurrencies,"
             "our portfolio is one of the most unique in Hungary."]]
 
@@ -79,7 +81,7 @@
        [:div.container-z
         [:div.subtitle-wrapper
          [:h3.leadership-title "MEMBERS"]
-         [:p ""]]
+         [:p "Our goals go beyond making money & having fun. Read more about the "[:a {:style {:font-weight 800} :href "https://zegen.org" :target "_blank"} "ZEGEN guild"]"."]]
         [:div.swiper-container.s2
          [:div.swiper-wrapper
           [member "bruno" "OPERATIONS" "Zawiasa Brúnó Márton"
@@ -89,9 +91,7 @@
             ["telegram" "/"]]]
 
           [member "berci" "TECHNOLOGY" "Zawias Bernát Barnabás"
-           ["Bernat is just as precise as his end products."
-            "He could create robots from anything which qualifies him as our Chief Technology Officer."
-            "When he doesn't do that, he plays darts."]]
+           ["Bernat is highly precise like his end products."]]
 
           [member "samu" "RELATIONS" "Kálló Sámuel"
            ["Samuel has unmatched abilities to read, understand and learn things."
@@ -100,7 +100,7 @@
 
           [member "aron" "INVESTMENT" "Zawiasa Róbert Áron"
            ["Robert made his way into the investment world early in his career as an early adopter of cryptocurrencies."
-            "He is responsible for company strategy and investor relationships as the Chief Investment Officer."]
+            "He is responsible for company strategy as the Chief Investment Officer."]
            [["linkedin" "https://www.linkedin.com/in/zawiasa/"]
             ["twitter" "https://twitter.com/aaronpowered"]
             ["telegram" "/"]]]]
