@@ -1,0 +1,67 @@
+#products
+
+  .products__wrapper
+    display: grid
+    gap: 45px
+    
+    .product
+      border: 5px solid black
+      @media screen and (max-width: 767px)
+        flex-direction: column
+
+      > img
+        @media screen and (min-width: 768px)
+          height: 180px
+          width: auto
+        @media screen and (min-width: 1500px) and (min-height: 900px)
+          height: 220px
+
+      .card__content
+        display: flex
+        flex-direction: column
+        padding: 30px 25px
+        margin: auto 0
+        @media screen and (min-width: 768px)
+          padding: 10px 25px
+        @media screen and (min-width: 992px)
+          padding: 25px 50px
+
+        .card__title
+          text-transform: uppercase
+          margin: 0
+
+        .card__description p
+          text-align: justify
+          margin: 0.8em 0
+
+        a
+          background-color: black
+          color: white
+          text-transform: uppercase
+          font-weight: 900
+          position: absolute
+          right: -5px
+          bottom: -5px
+          padding: 15px 30px
+          border-top-left-radius: 20px
+          border-bottom-right-radius: 10px
+          transition: filter .2s ease-in-out
+          @media screen and (min-width: 1500px) and (min-height: 900px)
+            font-size: 18px
+
+          &:hover
+            filter: brightness(110%)
+
+      &.product--comingSoon
+        background-color: #b2b2b280
+        border: 0
+        border-radius: 10px
+        @include flex()
+        justify-content: center
+        @media screen and (min-width: 768px)
+          height: 180px
+        @media screen and (min-width: 1500px) and (min-height: 900px)
+          height: 220px
+
+        h3
+          color: white

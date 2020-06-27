@@ -1,0 +1,119 @@
+#members
+  display: flex
+  flex-direction: column
+  padding-bottom: 0
+  padding-top: 40px
+  @media screen and (min-height: 895px)
+    padding-top: 60px
+  
+  .members__wrapper
+    display: grid
+    gap: 20px 0
+    margin-bottom: 80px
+    @media screen and (min-width: 768px)
+      grid-template-columns: repeat(2, auto)
+      grid-template-rows: repeat(3, auto)
+      gap: 35px
+    @media screen and (min-width: 1200px)
+      margin-bottom: 60px
+
+    .card
+      width: auto
+      padding: 0
+      overflow: hidden
+      margin: 0
+      @media screen and (max-width: 1199px)
+        height: 100px
+
+      > img
+        width: 100px
+        height: 100px
+        z-index: 10
+        @media screen and (min-width: 1200px)
+          width: 130px
+          height: 130px
+        @media screen and (min-width: 1500px) and (min-height: 900px)
+          width: 140px
+          height: 140px
+
+      .card__title
+        margin: 10px 0
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+      h6
+        font-size: 14px
+        font-weight: 600
+        margin: 0
+
+      .card__content
+        min-width: 0
+        @media screen and (min-width: 1200px)
+          padding: 0 20px
+          margin: auto 0
+        
+        .card__description
+          transition: width .3s, transform .3s
+          width: 100%
+            
+          p
+            margin: 10px 0
+            @media screen and (max-width: 1199px)
+              @include multiLineEllipsis($lineHeight: 1em, $lineCount: 2, $bgColor: white)
+
+      .card__social
+        flex-shrink: 0
+        width: 0
+        //height: 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        transition: width .2s ease-in-out
+        @media screen and (max-width: 1199px)
+          position: absolute
+          left: 110px
+          top: 62px
+          width: auto
+          margin: 0
+          flex-direction: row
+          justify-content: left
+          overflow: hidden
+          visibility: hidden
+          opacity: 0
+          transition: opacity .3s, visibility .3s
+          
+        a
+          display: inline-block
+          margin: 5px
+
+          img
+            display: block
+            color: grey
+            filter: opacity(0.5)
+
+      &:hover, &:focus
+        @media screen and (max-width: 1199px)
+          height: 182px
+          @media screen and (max-width: 991px)
+            height: 195px
+
+          .card__description
+            width: calc(100% + 100px)
+            transform: translate(-95px, 55px)
+
+            p
+              max-height: unset
+
+          .card__social
+            //height: 35px
+            opacity: 1
+            visibility: visible
+        
+        @media screen and (min-width: 1200px)
+          transform: scale(1.03)
+          margin: 0 -20px
+          z-index: 10
+
+          .card__social
+            width: 40px

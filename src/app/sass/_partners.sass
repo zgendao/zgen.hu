@@ -1,0 +1,32 @@
+#partners
+
+  .partners__wrapper
+    display: grid
+    gap: 20px 0
+    @media screen and (min-width: 768px)
+      grid-template-columns: 1fr 1fr
+      gap: 40px 60px
+
+  .partner
+
+    .partner__brand
+      background-color: black
+      border-radius: 10px
+      padding: 20px
+      display: flex
+      align-items: center
+      @media screen and (min-width: 992px)
+        padding: 25px
+      @media screen and (min-width: 1500px) and (min-height: 800px)
+        padding: 30px
+
+      > img
+        margin-right: 20px
+        @media screen and (min-width: 768px)
+          margin-right: 30px
+          width: 40px
+          height: 40px
+
+      > h3
+        margin: 0
+        color: white

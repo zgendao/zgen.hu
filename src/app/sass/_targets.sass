@@ -1,0 +1,61 @@
+#targets
+  .container
+    overflow: visible
+  .swiper-container
+    overflow: visible
+    @media screen and (min-width: 1200px)
+      width: 100%
+      margin: 0
+
+    .swiper-wrapper
+      margin: 50px auto
+      @media screen and (min-width: 1200px)
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: 20px
+        transform: unset !important
+
+      .swiper-slide
+        height: unset
+        @media screen and (min-width: 1200px)
+          width: auto !important
+          margin-right: 0 !important
+
+        .card
+          height: 100%
+          margin: 0 35px
+          flex: 1
+          @media screen and (min-width: 576px)
+            margin: 0
+
+          img
+            position: absolute
+            width: 120px
+            top: -45px
+
+            &.ether 
+              width: 100px
+
+            &.esport 
+              width: 130px
+              top: -60px
+
+            &.education
+              top: -60px
+
+          .card__title
+            text-align: center
+
+          .card__content
+            margin-top: 40px
+            padding: 20px 30px
+            @media screen and (min-width: 1200px)
+              width: auto
+    
+    .swiper-pagination
+      bottom: -40px
+      @media screen and (min-width: 1200px)
+        display: none
+      
+      .swiper-pagination-bullet-active
+        background-color: #000 !important

@@ -1,0 +1,37 @@
+#footer
+  margin-top: auto
+  background-color: white
+  padding: 15px 0
+  font-weight: 500
+
+  .container
+    @include flex()
+
+    div
+      @include flex()
+      @media screen and (max-width: 767px)
+        width: 100%
+        margin: 5px 0
+
+      &.footer__brand
+        h3
+          margin: 0
+
+        span
+          margin-left: 20px
+      
+      &.footer__contact
+        > a
+          margin-right: 20px
+          flex-grow: 1
+        
+        .footer__social
+          flex: 0
+          
+          a
+            margin: 0 3px
+            display: flex
+
+  @media screen and (max-width: 767px)
+    .container
+      flex-direction: column
