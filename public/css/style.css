@@ -441,11 +441,6 @@ section.background--grey {
     padding: 25px;
   }
 }
-@media screen and (min-width: 1500px) and (min-height: 800px) {
-  #partners .partner .partner__brand {
-    padding: 30px;
-  }
-}
 #partners .partner .partner__brand > img {
   margin-right: 20px;
 }
@@ -592,9 +587,7 @@ section.background--grey {
   }
 }
 #members .members__wrapper .card > img {
-  width: 100px;
-  height: 100px;
-  z-index: 10;
+  flex-shrink: 0;
 }
 @media screen and (min-width: 1200px) {
   #members .members__wrapper .card > img {

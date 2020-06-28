@@ -2,10 +2,11 @@
   (:require [reagent.core :as reagent :refer [atom]]
             [swiper :as Swiper]))
 
-(def breakpoint (.matchMedia js/window "(min-width:1200px) and (min-height: 795px) and (max-height: 1100px)"))
-
 (def mainSwiper nil)
 (def targetsSwiper nil)
+
+(def mainSwiper_breakpoint (.matchMedia js/window "(min-width:1200px) and (min-height: 795px) and (max-height: 1100px)"))
+(def targetsSwiper_breakpoint (.matchMedia js/window "(max-width:1199px)"))
 
 (def enable_mainSwiper
   (fn []
@@ -43,15 +44,21 @@
                                                                   :centeredSlides false
                                                                   :spaceBetween 35}}})))))
 
-(def breakpointChecker
+(def mainSwiper_breakpointChecker
   (fn []
     (cond
-      (= (.-matches breakpoint) true) (do (when (not= targetsSwiper nil)
-                                            (.destroy targetsSwiper true true))
-                                          (enable_mainSwiper))
-      (= (.-matches breakpoint) false) (do (when (not= mainSwiper nil)
-                                             (.destroy mainSwiper true true))
-                                           (enable_targetsSwiper))
+      (= (.-matches mainSwiper_breakpoint) true) (enable_mainSwiper)
+      (= (.-matches mainSwiper_breakpoint) false) (when (not= mainSwiper nil)
+                                                    (.destroy mainSwiper true true))
       :else nil)))
 
-(.addListener breakpoint breakpointChecker)        
+(def targetsSwiper_breakpointChecker
+  (fn []
+    (cond
+      (= (.-matches targetsSwiper_breakpoint) true) (enable_targetsSwiper)
+      (= (.-matches targetsSwiper_breakpoint) false) (when (not= targetsSwiper nil)
+                                                      (.destroy targetsSwiper true true))
+      :else nil)))
+
+(.addListener mainSwiper_breakpoint mainSwiper_breakpointChecker)
+(.addListener targetsSwiper_breakpoint targetsSwiper_breakpointChecker)        

@@ -1,6 +1,7 @@
 (ns app.views
   (:require [reagent.core :as reagent :refer [atom]]
-            [app.dynamicSwipers :refer [breakpointChecker]]))  
+            [app.dynamicSwipers :refer [mainSwiper_breakpointChecker
+                                        targetsSwiper_breakpointChecker]]))  
 
 (defn section-title [title]
   [:div.section-title
@@ -39,7 +40,7 @@
 
 (defn member [img title name description social]
   [:div.card
-    [:img {:src (str "/images/members/" img ".jpg") :width "140px" :height "140px"}]
+    [:img {:src (str "/images/members/" img ".jpg") :width "100px" :height "100px"}]
     [:div.card__content
       [:h5.card__title name]
       [:h6 title]
@@ -52,7 +53,7 @@
       
 (defn app []
   (reagent/create-class
-   {:component-did-mount (fn [this] (breakpointChecker))
+   {:component-did-mount (fn [this] (mainSwiper_breakpointChecker) (targetsSwiper_breakpointChecker))
     :reagent-render
     (fn []
       [:main#mainSwiper.swiper-container
@@ -125,7 +126,7 @@
               [section-title "Members"]
               [:div.members__wrapper
                 [member "marcell" "Backend" "Marcell Lakos"
-                  ["Marcell is a real maker. When he is not playing with electronics he is developing a web applitacion backend."]                  
+                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web application backend."]                  
                   [["github" "https://github.com/marclllaks"]]]
                 
                 [member "domos" "UI/UX" "Domokos Vali"
@@ -142,7 +143,7 @@
 
                 [member "berci" "Backend" "Bernat Barnabas Zawiasa"
                   ["Bernát is an engineer guy, who thinks precise and qualitative job is the only job.
-                    He design machines with the software behind them."]]
+                    He designes machines with software behind them."]]
 
                 [member "bruno" "Fullstack" "Bruno Marton Zawiasa"
                   ["Bruno is the all seeing eye of ZGEN and its associates, his natural leader abilities
