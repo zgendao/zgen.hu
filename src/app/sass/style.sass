@@ -58,10 +58,12 @@ body
       &:first-child
         display: none
         
-a:link, a:visited, a:hover, a:active 
+a
   color: inherit
-  background-color: transparent
   text-decoration: none
+
+  &:hover
+    filter: opacity(0.7)
 
 p
   font-weight: 500
@@ -149,16 +151,16 @@ section
 
 .card
   background-color: white
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)
   border-radius: 10px
   position: relative
   display: flex
-  justify-content: center
   transition: all .2s ease-in-out
 
-  &:hover 
-    transform: scale(1.03)
-    box-shadow: 0px 14px 20px rgba(0, 0, 0, 0.25)
+  &:not(.noElevation)
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)
+    &:hover
+      transform: scale(1.03)
+      box-shadow: 0px 14px 20px rgba(0, 0, 0, 0.25)
 
   .card__content
     padding: 0 10px

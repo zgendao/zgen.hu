@@ -22,11 +22,11 @@
       (for [p description]
         [:p p])]]]])
 
-(defn partner [img title color description]
+(defn partner [img title color description url]
   [:div.partner
-    [:div.partner__brand {:style {:background color}}
+    [:div.partner__brand.card {:style {:background color}}
       [:img {:src (str "/images/partners/" img ".svg") :width "20" :height "20"}]
-      [:h3 title]]
+      [:h3 [:a {:href url} title]]]
     [:p.partner__desc description]])
 
 (defn product [img title color description url]
@@ -69,7 +69,7 @@
               [section-title "Targets"]
               [:div#targetsSwiper.swiper-container
                 [:div.swiper-wrapper
-                  [division "ai" "SOFTWARE EVERYHWERE"
+                  [division "ai" "SOFTWARE EVERYWHERE"
                     ["We automate work with a wide range of technics."
                       "From genetic algorithms to multi-layer neural networks: We build our custom solutions to every problem."
                       "Our team has experts in low-level programming & language design."]]
@@ -100,12 +100,20 @@
               [section-title "Partners"]
               [:div.partners__wrapper
                 [partner "harmony" "harmony.one" "linear-gradient(to right, rgb(0, 173, 232), rgb(102, 248, 190))"
-                         "Ecosystem building for the pioneer blockchain project of the future economy."]
+                         "Ecosystem building for the pioneer blockchain project of the future economy."
+                         "https://www.harmony.one/"]
                 [partner "incognito" "incognito.org" "black"
-                         "Business development in the most active blockchain privacy movement."]
+                         "Business development in the most active blockchain privacy movement."
+                         "https://incognito.org/"]
                 [partner "mta-taki" "mta-taki.hu" "#006004"
-                         "IoT development for the center of agricultural research in Hungary"]
-                [partner "dummy" "COMING SOON..." "#b2b2b280" ""]]]]                        
+                         "IoT development for the center of agricultural research in Hungary"
+                         "https://www.mta-taki.hu/hu"]
+                [:div.partner
+                  [:div.partner__brand.card.noElevation {:style {:background "#b2b2b280"}}
+                    [:img {:src (str "/images/partners/dummy.svg") :width "20" :height "20"}]
+                    [:h3 "COMING SOON..."]]
+                  [:p.partner__desc ""]]]]]
+                   
                 
 
           [:section#products.swiper-slide {:data-hash "products"}
@@ -126,7 +134,7 @@
               [section-title "Members"]
               [:div.members__wrapper
                 [member "marcell" "Backend" "Marcell Lakos"
-                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web application backend."]                  
+                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web-application backend."]                  
                   [["github" "https://github.com/marclllaks"]]]
                 
                 [member "domos" "UI/UX" "Domokos Vali"
