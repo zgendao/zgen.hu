@@ -69,7 +69,7 @@
               [section-title "Targets"]
               [:div#targetsSwiper.swiper-container
                 [:div.swiper-wrapper
-                  [division "ai" "SOFTWARE EVERYHWERE"
+                  [division "ai" "SOFTWARE EVERYWHERE"
                     ["We automate work with a wide range of technics."
                       "From genetic algorithms to multi-layer neural networks: We build our custom solutions to every problem."
                       "Our team has experts in low-level programming & language design."]]
@@ -126,7 +126,7 @@
               [section-title "Members"]
               [:div.members__wrapper
                 [member "marcell" "Backend" "Marcell Lakos"
-                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web application backend."]                  
+                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web-application backend."]                  
                   [["github" "https://github.com/marclllaks"]]]
                 
                 [member "domos" "UI/UX" "Domokos Vali"
