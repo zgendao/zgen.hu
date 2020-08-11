@@ -1,7 +1,7 @@
 (ns app.views
   (:require [reagent.core :as reagent :refer [atom]]
             [app.dynamicSwipers :refer [mainSwiper_breakpointChecker
-                                        targetsSwiper_breakpointChecker]]))  
+                                        targetsSwiper_breakpointChecker]]))
 
 (defn section-title [title]
   [:div.section-title
@@ -14,18 +14,18 @@
 
 (defn division [img title description]
   [:div.swiper-slide
-   [:div.card
-    [:img {:class [img] :src (str "/images/targets/" img ".svg")}]
-    [:div.card__content
-     [:h5.card__title title]
-     [:div.card__description.card__description--smaller
-      (for [p description]
-        [:p p])]]]])
+    [:div.card
+      [:img {:class [img] :src (str "/images/targets/" img ".svg")}]
+      [:div.card__content
+        [:h5.card__title title]
+        [:div.card__description.card__description--smaller
+          (for [p description]
+            [:p p])]]]])
 
 (defn partner [img title color description url]
   [:div.partner
     [:div.partner__brand.card {:style {:background color}}
-      [:img {:src (str "/images/partners/" img ".svg") :width "20" :height "20"}]
+      [:img {:src (str "/images/partners/" img ".svg") :target "_blank" :width "20" :height "20"}]
       [:h3 [:a {:href url} title]]]
     [:p.partner__desc description]])
 
@@ -50,7 +50,7 @@
     [:div.card__social
       (for [platform social]
         [social-icon (first platform) (second platform) "20px"])]])
-      
+
 (defn app []
   (reagent/create-class
    {:component-did-mount (fn [this] (mainSwiper_breakpointChecker) (targetsSwiper_breakpointChecker))
@@ -108,13 +108,14 @@
                 [partner "mta-taki" "mta-taki.hu" "#006004"
                          "IoT development for the center of agricultural research in Hungary"
                          "https://www.mta-taki.hu/hu"]
-                [:div.partner
-                  [:div.partner__brand.card.noElevation {:style {:background "#b2b2b280"}}
-                    [:img {:src (str "/images/partners/dummy.svg") :width "20" :height "20"}]
-                    [:h3 "COMING SOON..."]]
-                  [:p.partner__desc ""]]]]]
-                   
-                
+                [partner "szte" "University of Szeged" "#16253E"
+                         "Trainee partnership with the number one university of Hungary"
+                         "https://u-szeged.hu/"]]]]
+                ; [:div.partner
+                ;   [:div.partner__brand.card.noElevation {:style {:background "#b2b2b280"}}
+                ;     [:img {:src (str "/images/partners/dummy.svg") :width "20" :height "20"}]
+                ;     [:h3 "COMING SOON..."]]
+                ;   [:p.partner__desc ""]]]]]
 
           [:section#products.swiper-slide {:data-hash "products"}
             [:div.container
@@ -134,9 +135,9 @@
               [section-title "Members"]
               [:div.members__wrapper
                 [member "marcell" "Backend" "Marcell Lakos"
-                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web-application backend."]                  
+                  ["Marcell is a real maker. When he is not playing with electronics, he is developing a web-application backend."]
                   [["github" "https://github.com/marclllaks"]]]
-                
+
                 [member "domos" "UI/UX" "Domokos Vali"
                   ["Domos is obsessed with designing and creating user-first applications and experiences.
                     His precision is an important ingredient of our products."]
@@ -147,15 +148,18 @@
                 [member "samu" "Relations" "Samuel Kallo"
                   ["As an organizer of MCC Debate, Samuel knows a lot about connecting with people.
                     Also, he has been writing for prominent hungarian newspapers since his early years in university."]
-                  [["linkedin" "https://www.linkedin.com/in/s%C3%A1muel-k%C3%A1ll%C3%B3-975428152/"]]]              
+                  [["linkedin" "https://www.linkedin.com/in/s%C3%A1muel-k%C3%A1ll%C3%B3-975428152/"]
+                   ["twitter" "https://twitter.com/SamuelKallo"]
+                   ["telegram" "https://t.me/kallosamuel"]]]
 
                 [member "berci" "Backend" "Bernat Barnabas Zawiasa"
                   ["Bernát is an engineer guy, who thinks precise and qualitative job is the only job.
-                    He designes machines with software behind them."]]
+                    He designes machines with software behind them."]
+                  [["linkedin" "https://www.linkedin.com/in/bern%C3%A1t-barnab%C3%A1s-zawiasa-73557b143/"]]]
 
                 [member "bruno" "Fullstack" "Bruno Marton Zawiasa"
                   ["Bruno is the all seeing eye of ZGEN and its associates, his natural leader abilities
-                    and consistency make him a perfect Chief Operating Officer."]                  
+                    and consistency make him a perfect Chief Operating Officer."]
                   [["linkedin" "https://www.linkedin.com/in/bruno-z-411656141/"]
                    ["github" "https://github.com/Brunya"]
                    ["telegram" "https://t.me/zawiasabruno"]]]
